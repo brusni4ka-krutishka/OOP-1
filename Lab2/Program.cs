@@ -49,7 +49,7 @@ namespace Lab2
 
             //1e
             Nullable<uint> zero = null;
-            Console.WriteLine(zero);
+            Console.WriteLine($"Nullable: {zero}");
 
             //1f
             /*var err = 0;
@@ -94,6 +94,8 @@ namespace Lab2
                     Console.Write($"{matrix[i, j]}\t");
                 };
                 Console.WriteLine();
+                //for более гибкий
+                //foreach ...
             };
             //3b
             string[] days = { "Mon", "Tue", "Wed", "Thi", "Fri", "Sat", "Sun" };

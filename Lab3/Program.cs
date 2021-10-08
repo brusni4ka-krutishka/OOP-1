@@ -10,12 +10,22 @@ namespace Lab3
     partial class Abiturient //класс partial
     {
         private readonly byte id = 0; //Поле только для чтения
+        private string name;
+        private string lastname;
+        private string patronymic;
+        private string adress;
+        private string telephone;
         private byte[] marks = new byte[4] {1,1,1,1};
-        private const byte fukoff = 1; //поле-константа
+        private const byte zukoff = 1; //поле-константа
 
         //Конструктор с параметрами
         public Abiturient(string name, string lastname, string patronymic, string adress, string telephone, byte[] marks)
         {
+            this.name = name;
+            this.lastname = lastname;
+            this.patronymic = patronymic;
+            this.adress = adress;
+            this.telephone = telephone;
             this.marks = marks;
             counterObj++;
         }
@@ -57,25 +67,27 @@ namespace Lab3
 
         static byte counterObj = 0; //статическое поле
 
-        public static void objCounter() { Console.WriteLine(counterObj); } //статический метод
+        static void objCounter() { Console.WriteLine(counterObj); } //статический метод
 
 
-        public byte Average_score()  //"Пользовательский" метод
+        public float Average_score()  //"Пользовательский" метод
         {
             int score = 0;
             for (byte i = 0; i < marks.Length; i++)
             {
                 score+= marks[i];
             }
-            return  (byte)(score / marks.Length);
+            return  (score / marks.Length);
         }
         public void Min()   //"Пользовательский" метод
         {
             Array.Sort(marks);
+            Console.WriteLine(marks[0]);
         }
         public void Max()   //"Пользовательский" метод
         {
             Array.Sort(marks);
+            Console.WriteLine(marks[marks.Length-1]);
         }
 
         public Abiturient(byte[] marks) {
@@ -147,17 +159,16 @@ namespace Lab3
 
                 Console.WriteLine();
 
-                byte[] mass = { 1, 5, 5, 6 };
+                byte[] mass = { 1, 5, 5, 0 };
                 Abiturient a1 = new Abiturient(mass);
                 Abiturient a2 = new Abiturient(mass);
                 Console.WriteLine("Хэш " + a1.GetHashCode());
                 Console.WriteLine("Тип " + a2.GetType());
                 Console.WriteLine("К строке " + a1.ToString());
                 Console.WriteLine("Эквивалентны? " + a1.Equals(a2));
-
+                a1.Average_score();
                 var user = new { Name = "Eugene", Age = 18 }; //Анонимный тип
                 Console.WriteLine(user.Name);
-
                 Console.ReadKey();
 
             }

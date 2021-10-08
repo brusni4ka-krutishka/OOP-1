@@ -10,22 +10,12 @@ namespace Lab3
     partial class Abiturient //класс partial
     {
         private readonly byte id = 0; //Поле только для чтения
-        private string name;
-        private string lastname;
-        private string patronymic;
-        private string adress;
-        private string telephone;
         private byte[] marks = new byte[4] {1,1,1,1};
         private const byte fukoff = 1; //поле-константа
 
         //Конструктор с параметрами
         public Abiturient(string name, string lastname, string patronymic, string adress, string telephone, byte[] marks)
         {
-            this.name = name;
-            this.lastname = lastname;
-            this.patronymic = patronymic;
-            this.adress = adress;
-            this.telephone = telephone;
             this.marks = marks;
             counterObj++;
         }
@@ -48,7 +38,6 @@ namespace Lab3
                 else return 0;
             }
         }
-
         public string Name { get; set; } //Автоматические свойства
         public string Lastname { get; set; }
         public string Patronymic { get; set; }
@@ -60,14 +49,15 @@ namespace Lab3
             set { marks = value; }
         }
 
-        public void Refnout(ref byte x, out byte y) //ref и out параметры
+        public byte Refnout(ref byte x, out byte y) //ref и out параметры
         {
             y = ++x;
+            return y;
         }
 
         static byte counterObj = 0; //статическое поле
 
-        static void objCounter() { Console.WriteLine(counterObj); } //статический метод
+        public static void objCounter() { Console.WriteLine(counterObj); } //статический метод
 
 
         public byte Average_score()  //"Пользовательский" метод
@@ -110,16 +100,16 @@ namespace Lab3
                     database[i].Name = Console.ReadLine();
 
                     Console.Write("Введите фамилию студента {0}: ", i + 1);
-                    database[i].Name = Console.ReadLine();
+                    database[i].Lastname = Console.ReadLine();
 
                     Console.Write("Введите отчество студента {0}: ", i + 1);
-                    database[i].Name = Console.ReadLine();
+                    database[i].Patronymic = Console.ReadLine();
 
                     Console.Write("Введите адрес студента {0}: ", i + 1);
-                    database[i].Name = Console.ReadLine();
+                    database[i].Adress = Console.ReadLine();
 
                     Console.Write("Введите телефон студента {0}: ", i + 1);
-                    database[i].Name = Console.ReadLine();
+                    database[i].Telephone = Console.ReadLine();
 
                     Console.WriteLine("Введите балл студента {0} по...", i + 1);
 
@@ -158,7 +148,6 @@ namespace Lab3
                 Console.WriteLine();
 
                 byte[] mass = { 1, 5, 5, 6 };
-
                 Abiturient a1 = new Abiturient(mass);
                 Abiturient a2 = new Abiturient(mass);
                 Console.WriteLine("Хэш " + a1.GetHashCode());

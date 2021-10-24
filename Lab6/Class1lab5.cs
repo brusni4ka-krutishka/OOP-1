@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lab5
+namespace Lab6
 {
     interface IDo{void Print();}
     interface IAlive{void Clone();}
@@ -99,6 +99,7 @@ namespace Lab5
                 int sum = min + average + max;
                 sum /= 3;
                 Console.WriteLine($"Average speed = {sum}");
+
             }
         }
     }

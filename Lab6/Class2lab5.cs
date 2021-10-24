@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Lab5
+namespace Lab6
 {
     public class ForObject : Object // переопределение методов Object
     {
@@ -29,7 +29,7 @@ namespace Lab5
 
     public partial class ENUMandSTRUCT
     {
-        enum Mechanisms
+        enum Mechanisms:byte
         {
             comp=1,
             tablet,

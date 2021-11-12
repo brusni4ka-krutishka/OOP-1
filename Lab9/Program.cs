@@ -10,6 +10,8 @@ namespace Lab9
     {
         static void Main()
         {
+            BeChange Message = (str) => Console.WriteLine(str);
+
             Game game = new();
 
             Сharacter char1 = new("Орк", 100, 15),

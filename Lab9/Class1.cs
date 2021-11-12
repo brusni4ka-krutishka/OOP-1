@@ -28,6 +28,9 @@ namespace Lab9
 
     class Сharacter
     {
+        private string race;
+        private short health;
+        private short damage;
         public int changeCounter = 0;
         
         BeChange change;

@@ -11,23 +11,26 @@ namespace Lab9
         public void DidAttack()
         {
             Console.WriteLine("Проверяем здоровье персонажей...");
-            Attacking?.Invoke();
+            Attacking?.Invoke(this, null);
         }
         public void DidHealing()
         {
             Console.WriteLine("Проверяем здоровье персонажей...");
-            Healing?.Invoke();
+            Healing?.Invoke(this, null);
         }
         public void DidApocalypse()
         {
             Console.WriteLine("Это конец...");
-            Apocalypsing?.Invoke();
+            Apocalypsing?.Invoke(this, null);
         }
 
     }
 
     class Сharacter
     {
+        private string race;
+        private short health;
+        private short damage;
         public int changeCounter = 0;
         
         BeChange change;
@@ -54,7 +57,7 @@ namespace Lab9
             change?.Invoke($"Кол-во персонажей: {changeCounter}\n");
         }
 
-        public void Attack()
+        public void Attack(object AttackerNot, EventArgs args)
         {
             if (Health > 0)
             {
@@ -64,18 +67,18 @@ namespace Lab9
             Console.WriteLine("Персонаж мертв.\n");
         }
 
-        public void Heal()
+        public void Heal(object AttackerNot, EventArgs args)
         {
             if (Health > 0)
             {
                 Health += 20;
-                Console.WriteLine($"Персонаж подлечен.\nЗдоровье персонажа {Race}: {Health}\n");
+                Console.WriteLine($"Персонаж полечен.\nЗдоровье персонажа {Race}: {Health}\n");
             }
             else
                 Console.WriteLine("Персонаж мертв.\n");
         }
 
-        public void Apocalypse()
+        public void Apocalypse(object AttackerNot, EventArgs args)
         {
             Health = 0;
             Console.WriteLine($"На персонажа {Race} упал метеорит.\nПерсонаж мертв.\n");

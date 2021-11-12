@@ -69,7 +69,7 @@ namespace Lab9
             if (Health > 0)
             {
                 Health += 20;
-                Console.WriteLine($"Персонаж полечен.\nЗдоровье персонажа {Race}: {Health}\n");
+                Console.WriteLine($"Персонаж подлечен.\nЗдоровье персонажа {Race}: {Health}\n");
             }
             else
                 Console.WriteLine("Персонаж мертв.\n");

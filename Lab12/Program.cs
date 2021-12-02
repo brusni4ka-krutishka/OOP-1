@@ -20,7 +20,7 @@ namespace Lab12
             Reflector.FieldsAndProperties(scanner);
             Reflector.Interfaces(computer);
             Reflector.PublicMethods(tablet);
-
+            Reflector.Create();
             Reflector.Invoke("Lab12.TestParams", "showParams");
 
             Console.ReadKey();

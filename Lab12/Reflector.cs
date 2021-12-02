@@ -9,8 +9,8 @@ namespace Lab12
     {
         static public void AllClassContent(object obj)
         {
-            StreamWriter sw = new(@"C:\OOP\Lab5\text.txt", false, System.Text.Encoding.Default);
-
+            StreamWriter sw = new(@"..\text.txt", false, System.Text.Encoding.Default);
+            Console.WriteLine(obj.GetType().Assembly);
             MemberInfo[] members = obj.GetType().GetMembers();
             foreach (MemberInfo item in members)
                 sw.WriteLine($"{item.DeclaringType} {item.MemberType} {item.Name}");
@@ -65,10 +65,15 @@ namespace Lab12
                         Console.WriteLine("Метод: " + item.ReturnType.Name + " " + item.Name);
             }
         }
+        public static void Create()
+        {
+            Tablet t1 = new("tabl","yes",10);
+            Console.WriteLine(t1);
+        }
 
         public static void Invoke(string Class, string MethodName)
         {
-            StreamReader reader = new(@"C:\OOP\Lab5\text.txt", Encoding.Default);
+            StreamReader reader = new(@"..\text.txt", Encoding.Default);
             string param1, param2, param3;
             param1 = reader.ReadLine();
             param2 = reader.ReadLine();

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Figures>
+  <figure name="Circle">    
+    <id>123123</id>
+<color>Blue</color>
+  </figure>  
+  
+  <figure name="Star">
+        <id>321321</id>
+<color>White</color>
+  </figure>
+  </Figures>

@@ -10,8 +10,8 @@ namespace Lab12
         static public void AllClassContent(object obj)
         {
             StreamWriter sw = new(@"..\text.txt", false, System.Text.Encoding.Default);
-            Console.WriteLine(obj.GetType().Assembly);
-            MemberInfo[] members = obj.GetType().GetMembers();
+            Console.WriteLine(obj.GetType().Assembly); //Получает имя сборки у типа
+            MemberInfo[] members = obj.GetType().GetMembers(); //Возвращает "участников" типа
             foreach (MemberInfo item in members)
                 sw.WriteLine($"{item.DeclaringType} {item.MemberType} {item.Name}");
             sw.Close();
@@ -30,13 +30,13 @@ namespace Lab12
         static public void FieldsAndProperties(object obj)
         {
             Console.WriteLine("Поля: ");
-            FieldInfo[] fields = obj.GetType().GetFields();
+            FieldInfo[] fields = obj.GetType().GetFields();//Получает поля у типа
 
             foreach (FieldInfo item in fields)
                 Console.WriteLine(item.FieldType + " " + item.Name);
 
             Console.WriteLine("Свойства: ");
-            PropertyInfo[] properties = obj.GetType().GetProperties();
+            PropertyInfo[] properties = obj.GetType().GetProperties(); //Получает свойства
             foreach (PropertyInfo item in properties)
                 Console.WriteLine($"{item.PropertyType} {item.Name}");
         }
@@ -82,7 +82,7 @@ namespace Lab12
             Console.WriteLine(param1+" "+param2 + " " + param3);
             Type m = Type.GetType(Class, false);
 
-            object st = Activator.CreateInstance(m, null);
+            var st = Activator.CreateInstance(m, null);
             MethodInfo method = m.GetMethod(MethodName);
         }
 

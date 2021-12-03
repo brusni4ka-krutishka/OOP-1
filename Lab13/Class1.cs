@@ -20,7 +20,7 @@ namespace Files                         //13
 
             try
             {
-                using StreamWriter sw = new(path, true, Encoding.Default);
+                StreamWriter sw = new(path, true, Encoding.Default);
                 sw.WriteLine(str);
                 sw.WriteLine($"Дата использования: ");
                 sw.WriteLine(DateTime.Now);
@@ -55,7 +55,7 @@ namespace Files                         //13
 
             public static void AllInfo()
             {
-                DriveInfo[] drives = DriveInfo.GetDrives();
+                DriveInfo[] drives = DriveInfo.GetDrives(); //Получает имена дисков
                 foreach (DriveInfo drive in drives)
                 {
                     if (drive.IsReady)
@@ -78,7 +78,7 @@ namespace Files                         //13
 
             public static void ShowFilePath(string path)
             {
-                FileInfo file = new(path);
+                FileInfo file = new(path); //Взаимодействие с файлом
                 if (file.Exists)
                 {
                     Console.WriteLine($"Имя файла: {file.Name}");
@@ -295,13 +295,15 @@ namespace Files                         //13
 
                 }
 
-               /* DirectoryInfo directory = new DirectoryInfo(path2);
 
-                if (!directory.Exists)
-                {
-                    directory.MoveTo(path3);
-                    Console.WriteLine("Перемещение прошло успешно");
-                }*/
+               /* //DirectoryInfo directory = new DirectoryInfo(path2);
+
+                //if (!directory.Exists)
+                //{
+                //    directory.MoveTo(path3);
+                //    Console.WriteLine("Перемещение прошло успешно");
+                //}*/
+
                 Observe("Пользователь использовал класс GEVFileManager и метод Task_b.");
             }
 

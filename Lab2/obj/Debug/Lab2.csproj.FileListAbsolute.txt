@@ -1,7 +1,0 @@
-C:\OOP\Lab2\bin\Debug\Lab2.exe.config
-C:\OOP\Lab2\bin\Debug\Lab2.exe
-C:\OOP\Lab2\bin\Debug\Lab2.pdb
-C:\OOP\Lab2\obj\Debug\Lab2.csproj.AssemblyReference.cache
-C:\OOP\Lab2\obj\Debug\Lab2.csproj.CoreCompileInputs.cache
-C:\OOP\Lab2\obj\Debug\Lab2.exe
-C:\OOP\Lab2\obj\Debug\Lab2.pdb

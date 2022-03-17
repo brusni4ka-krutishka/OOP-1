@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace Lab2
 {
     public class Flat
@@ -46,6 +45,7 @@ namespace Lab2
             set { roomsCount = value; }
         }
 
+        [NormalMeters]
         public uint Meters
         {
             get { return meters; }

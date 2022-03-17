@@ -1,4 +1,6 @@
-﻿namespace Lab2
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Lab2
 {
     public class Adress
     {
@@ -10,6 +12,7 @@
         private string street;
         private string building;
         private string flatt;
+        private int index;
         #endregion
         #region Props
         public string Flatt
@@ -59,8 +62,15 @@
             get { return flat; }
             set { flat = value; }
         }
+
+        [Range(100000,999999)]
+        public int Index
+        {
+            get { return index; }
+            set { index = value; }
+        }
         #endregion
-        public Adress(Flat flat, string country, string town, string district, string street, string building, string flatt)
+        public Adress(Flat flat, string country, string town, string district, string street, string building, string flatt, int index)
         {
             Flat = flat;
             Country = country;
@@ -69,6 +79,7 @@
             Street = street;
             Building = building;
             Flatt = flatt;
+            Index = index;
         }
 
         private string Options()
@@ -88,7 +99,7 @@
         {
             return $"Метраж:{Flat.Meters}.\nСтрана:{Country}.\nГород:{Town}.\nРайон: {District}.\n"+
                 $"Дата: {Flat.Date}.\nКол-во комнат: {Flat.RoomsCount}.\nТип материала: {Flat.Material}.\n" +
-                $"Улица: {Street}.\nКорпус:{Building}.\nНомер квартиры:{Flatt}.\nВключенные опции: {Options()}.";
+                $"Улица: {Street}.\nКорпус:{Building}.\nНомер квартиры:{Flatt}.\nИндекс: {Index}.\nВключенные опции: {Options()}.\n";
         }
     }
 }

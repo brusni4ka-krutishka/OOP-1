@@ -1,7 +1,7 @@
 ﻿
 namespace Lab2
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -51,6 +51,8 @@ namespace Lab2
             this.label10 = new System.Windows.Forms.Label();
             this.MaterialType = new System.Windows.Forms.ComboBox();
             this.Adress = new System.Windows.Forms.GroupBox();
+            this.Index = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.FlatT = new System.Windows.Forms.TextBox();
             this.BuildingT = new System.Windows.Forms.TextBox();
             this.StreetT = new System.Windows.Forms.TextBox();
@@ -69,15 +71,35 @@ namespace Lab2
             this.Serialize = new System.Windows.Forms.Button();
             this.Deserialize = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.CurrentTimeDate = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DateLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.TimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ObjCounter = new System.Windows.Forms.ToolStripStatusLabel();
+            this.LastAction = new System.Windows.Forms.ToolStripStatusLabel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.искатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.типМатериалаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сортироватьПоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поМетражуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поКоличествуКомнатToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поЭтажуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьРезультатПоискаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поискаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сортировкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.About = new System.Windows.Forms.ToolStripMenuItem();
+            this.индексToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Options.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rooms)).BeginInit();
             this.Adress.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 55);
+            this.label1.Location = new System.Drawing.Point(65, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 0;
@@ -86,7 +108,7 @@ namespace Lab2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 94);
+            this.label2.Location = new System.Drawing.Point(65, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 1;
@@ -99,7 +121,7 @@ namespace Lab2
             this.Options.Controls.Add(this.WC);
             this.Options.Controls.Add(this.Bath);
             this.Options.Controls.Add(this.Kitchen);
-            this.Options.Location = new System.Drawing.Point(69, 175);
+            this.Options.Location = new System.Drawing.Point(68, 203);
             this.Options.Name = "Options";
             this.Options.Size = new System.Drawing.Size(103, 163);
             this.Options.TabIndex = 3;
@@ -164,7 +186,7 @@ namespace Lab2
             // DateTimePicker
             // 
             this.DateTimePicker.CalendarTitleBackColor = System.Drawing.Color.Indigo;
-            this.DateTimePicker.Location = new System.Drawing.Point(435, 55);
+            this.DateTimePicker.Location = new System.Drawing.Point(434, 83);
             this.DateTimePicker.MaxDate = new System.DateTime(2022, 3, 31, 0, 0, 0, 0);
             this.DateTimePicker.Name = "DateTimePicker";
             this.DateTimePicker.Size = new System.Drawing.Size(109, 20);
@@ -174,7 +196,7 @@ namespace Lab2
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(339, 58);
+            this.label4.Location = new System.Drawing.Point(338, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 13);
             this.label4.TabIndex = 5;
@@ -182,7 +204,7 @@ namespace Lab2
             // 
             // Meters
             // 
-            this.Meters.Location = new System.Drawing.Point(122, 54);
+            this.Meters.Location = new System.Drawing.Point(121, 82);
             this.Meters.Name = "Meters";
             this.Meters.Size = new System.Drawing.Size(100, 20);
             this.Meters.TabIndex = 6;
@@ -191,7 +213,7 @@ namespace Lab2
             // Rooms
             // 
             this.Rooms.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Rooms.Location = new System.Drawing.Point(155, 80);
+            this.Rooms.Location = new System.Drawing.Point(154, 108);
             this.Rooms.Maximum = 5;
             this.Rooms.Minimum = 1;
             this.Rooms.Name = "Rooms";
@@ -202,7 +224,7 @@ namespace Lab2
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(161, 112);
+            this.label3.Location = new System.Drawing.Point(160, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 13);
             this.label3.TabIndex = 8;
@@ -211,7 +233,7 @@ namespace Lab2
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(186, 112);
+            this.label5.Location = new System.Drawing.Point(185, 140);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(13, 13);
             this.label5.TabIndex = 9;
@@ -220,7 +242,7 @@ namespace Lab2
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(210, 112);
+            this.label6.Location = new System.Drawing.Point(209, 140);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 10;
@@ -229,7 +251,7 @@ namespace Lab2
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(235, 112);
+            this.label7.Location = new System.Drawing.Point(234, 140);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 13);
             this.label7.TabIndex = 11;
@@ -238,7 +260,7 @@ namespace Lab2
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(260, 112);
+            this.label8.Location = new System.Drawing.Point(259, 140);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(13, 13);
             this.label8.TabIndex = 12;
@@ -247,7 +269,7 @@ namespace Lab2
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(342, 94);
+            this.label9.Location = new System.Drawing.Point(341, 122);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 13);
             this.label9.TabIndex = 13;
@@ -255,7 +277,7 @@ namespace Lab2
             // 
             // Floor
             // 
-            this.Floor.Location = new System.Drawing.Point(436, 130);
+            this.Floor.Location = new System.Drawing.Point(435, 158);
             this.Floor.Name = "Floor";
             this.Floor.Size = new System.Drawing.Size(42, 20);
             this.Floor.TabIndex = 16;
@@ -264,7 +286,7 @@ namespace Lab2
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(342, 133);
+            this.label10.Location = new System.Drawing.Point(341, 161);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 13);
             this.label10.TabIndex = 15;
@@ -281,13 +303,15 @@ namespace Lab2
             "Кирпич",
             "Стекло",
             "Дерево"});
-            this.MaterialType.Location = new System.Drawing.Point(435, 91);
+            this.MaterialType.Location = new System.Drawing.Point(434, 119);
             this.MaterialType.Name = "MaterialType";
             this.MaterialType.Size = new System.Drawing.Size(109, 21);
             this.MaterialType.TabIndex = 17;
             // 
             // Adress
             // 
+            this.Adress.Controls.Add(this.Index);
+            this.Adress.Controls.Add(this.label12);
             this.Adress.Controls.Add(this.FlatT);
             this.Adress.Controls.Add(this.BuildingT);
             this.Adress.Controls.Add(this.StreetT);
@@ -300,12 +324,29 @@ namespace Lab2
             this.Adress.Controls.Add(this.District);
             this.Adress.Controls.Add(this.Town);
             this.Adress.Controls.Add(this.Country);
-            this.Adress.Location = new System.Drawing.Point(342, 175);
+            this.Adress.Location = new System.Drawing.Point(341, 188);
             this.Adress.Name = "Adress";
-            this.Adress.Size = new System.Drawing.Size(200, 178);
+            this.Adress.Size = new System.Drawing.Size(200, 208);
             this.Adress.TabIndex = 18;
             this.Adress.TabStop = false;
             this.Adress.Text = "Адрес";
+            // 
+            // Index
+            // 
+            this.Index.Location = new System.Drawing.Point(82, 176);
+            this.Index.Name = "Index";
+            this.Index.Size = new System.Drawing.Size(103, 20);
+            this.Index.TabIndex = 26;
+            this.Index.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Index_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 177);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(45, 13);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Индекс";
             // 
             // FlatT
             // 
@@ -413,7 +454,7 @@ namespace Lab2
             this.WriteData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.WriteData.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WriteData.ForeColor = System.Drawing.Color.DarkRed;
-            this.WriteData.Location = new System.Drawing.Point(391, 527);
+            this.WriteData.Location = new System.Drawing.Point(390, 555);
             this.WriteData.Name = "WriteData";
             this.WriteData.Size = new System.Drawing.Size(153, 38);
             this.WriteData.TabIndex = 22;
@@ -427,7 +468,7 @@ namespace Lab2
             this.ClearData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearData.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ClearData.ForeColor = System.Drawing.Color.DarkRed;
-            this.ClearData.Location = new System.Drawing.Point(70, 527);
+            this.ClearData.Location = new System.Drawing.Point(69, 555);
             this.ClearData.Name = "ClearData";
             this.ClearData.Size = new System.Drawing.Size(153, 38);
             this.ClearData.TabIndex = 23;
@@ -437,7 +478,7 @@ namespace Lab2
             // 
             // OutputBox
             // 
-            this.OutputBox.Location = new System.Drawing.Point(70, 374);
+            this.OutputBox.Location = new System.Drawing.Point(69, 402);
             this.OutputBox.Name = "OutputBox";
             this.OutputBox.ReadOnly = true;
             this.OutputBox.Size = new System.Drawing.Size(474, 123);
@@ -450,7 +491,7 @@ namespace Lab2
             this.Serialize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Serialize.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Serialize.ForeColor = System.Drawing.Color.DarkRed;
-            this.Serialize.Location = new System.Drawing.Point(70, 583);
+            this.Serialize.Location = new System.Drawing.Point(69, 611);
             this.Serialize.Name = "Serialize";
             this.Serialize.Size = new System.Drawing.Size(153, 38);
             this.Serialize.TabIndex = 25;
@@ -464,7 +505,7 @@ namespace Lab2
             this.Deserialize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Deserialize.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Deserialize.ForeColor = System.Drawing.Color.DarkRed;
-            this.Deserialize.Location = new System.Drawing.Point(391, 583);
+            this.Deserialize.Location = new System.Drawing.Point(390, 611);
             this.Deserialize.Name = "Deserialize";
             this.Deserialize.Size = new System.Drawing.Size(153, 38);
             this.Deserialize.TabIndex = 26;
@@ -476,18 +517,157 @@ namespace Lab2
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label11.Location = new System.Drawing.Point(259, 9);
+            this.label11.Location = new System.Drawing.Point(258, 37);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 24);
             this.label11.TabIndex = 27;
             this.label11.Text = "Квартира";
             // 
-            // Form1
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CurrentTimeDate,
+            this.DateLabel,
+            this.TimeLabel,
+            this.ObjCounter,
+            this.LastAction});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 657);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(620, 22);
+            this.statusStrip1.TabIndex = 30;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // CurrentTimeDate
+            // 
+            this.CurrentTimeDate.Name = "CurrentTimeDate";
+            this.CurrentTimeDate.Size = new System.Drawing.Size(131, 17);
+            this.CurrentTimeDate.Text = "Текущие дата и время:";
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(0, 17);
+            // 
+            // TimeLabel
+            // 
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(0, 17);
+            // 
+            // ObjCounter
+            // 
+            this.ObjCounter.Name = "ObjCounter";
+            this.ObjCounter.Size = new System.Drawing.Size(0, 17);
+            // 
+            // LastAction
+            // 
+            this.LastAction.Name = "LastAction";
+            this.LastAction.Size = new System.Drawing.Size(0, 17);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.искатьToolStripMenuItem,
+            this.сортироватьПоToolStripMenuItem,
+            this.сохранитьРезультатПоискаToolStripMenuItem,
+            this.About});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(620, 24);
+            this.menuStrip1.TabIndex = 31;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // искатьToolStripMenuItem
+            // 
+            this.искатьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.типМатериалаToolStripMenuItem,
+            this.индексToolStripMenuItem});
+            this.искатьToolStripMenuItem.Name = "искатьToolStripMenuItem";
+            this.искатьToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.искатьToolStripMenuItem.Text = "Искать";
+            // 
+            // типМатериалаToolStripMenuItem
+            // 
+            this.типМатериалаToolStripMenuItem.Name = "типМатериалаToolStripMenuItem";
+            this.типМатериалаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.типМатериалаToolStripMenuItem.Text = "Тип материала";
+            this.типМатериалаToolStripMenuItem.Click += new System.EventHandler(this.типМатериалаToolStripMenuItem_Click);
+            // 
+            // сортироватьПоToolStripMenuItem
+            // 
+            this.сортироватьПоToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.поМетражуToolStripMenuItem,
+            this.поКоличествуКомнатToolStripMenuItem,
+            this.поЭтажуToolStripMenuItem});
+            this.сортироватьПоToolStripMenuItem.Name = "сортироватьПоToolStripMenuItem";
+            this.сортироватьПоToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.сортироватьПоToolStripMenuItem.Text = "Сортировать";
+            // 
+            // поМетражуToolStripMenuItem
+            // 
+            this.поМетражуToolStripMenuItem.Name = "поМетражуToolStripMenuItem";
+            this.поМетражуToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.поМетражуToolStripMenuItem.Text = "по метражу";
+            this.поМетражуToolStripMenuItem.Click += new System.EventHandler(this.поМетражуToolStripMenuItem_Click);
+            // 
+            // поКоличествуКомнатToolStripMenuItem
+            // 
+            this.поКоличествуКомнатToolStripMenuItem.Name = "поКоличествуКомнатToolStripMenuItem";
+            this.поКоличествуКомнатToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.поКоличествуКомнатToolStripMenuItem.Text = "по количеству комнат";
+            this.поКоличествуКомнатToolStripMenuItem.Click += new System.EventHandler(this.поКоличествуКомнатToolStripMenuItem_Click);
+            // 
+            // поЭтажуToolStripMenuItem
+            // 
+            this.поЭтажуToolStripMenuItem.Name = "поЭтажуToolStripMenuItem";
+            this.поЭтажуToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.поЭтажуToolStripMenuItem.Text = "по этажу";
+            this.поЭтажуToolStripMenuItem.Click += new System.EventHandler(this.поЭтажуToolStripMenuItem_Click);
+            // 
+            // сохранитьРезультатПоискаToolStripMenuItem
+            // 
+            this.сохранитьРезультатПоискаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.поискаToolStripMenuItem,
+            this.сортировкиToolStripMenuItem});
+            this.сохранитьРезультатПоискаToolStripMenuItem.Name = "сохранитьРезультатПоискаToolStripMenuItem";
+            this.сохранитьРезультатПоискаToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
+            this.сохранитьРезультатПоискаToolStripMenuItem.Text = "Сохранить результат";
+            // 
+            // поискаToolStripMenuItem
+            // 
+            this.поискаToolStripMenuItem.Name = "поискаToolStripMenuItem";
+            this.поискаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поискаToolStripMenuItem.Text = "поиска";
+            this.поискаToolStripMenuItem.Click += new System.EventHandler(this.поискаToolStripMenuItem_Click);
+            // 
+            // сортировкиToolStripMenuItem
+            // 
+            this.сортировкиToolStripMenuItem.Name = "сортировкиToolStripMenuItem";
+            this.сортировкиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сортировкиToolStripMenuItem.Text = "сортировки";
+            this.сортировкиToolStripMenuItem.Click += new System.EventHandler(this.сортировкиToolStripMenuItem_Click);
+            // 
+            // About
+            // 
+            this.About.Name = "About";
+            this.About.Size = new System.Drawing.Size(94, 20);
+            this.About.Text = "О программе";
+            this.About.Click += new System.EventHandler(this.AboutProgram);
+            // 
+            // индексToolStripMenuItem
+            // 
+            this.индексToolStripMenuItem.Name = "индексToolStripMenuItem";
+            this.индексToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.индексToolStripMenuItem.Text = "Индекс";
+            this.индексToolStripMenuItem.Click += new System.EventHandler(this.индексToolStripMenuItem_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.YellowGreen;
-            this.ClientSize = new System.Drawing.Size(620, 640);
+            this.ClientSize = new System.Drawing.Size(620, 679);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Deserialize);
             this.Controls.Add(this.Serialize);
@@ -511,13 +691,19 @@ namespace Lab2
             this.Controls.Add(this.Options);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "MainForm";
             this.Text = "Квартирник";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Options.ResumeLayout(false);
             this.Options.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rooms)).EndInit();
             this.Adress.ResumeLayout(false);
             this.Adress.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -565,6 +751,26 @@ namespace Lab2
         private System.Windows.Forms.Button Serialize;
         private System.Windows.Forms.Button Deserialize;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox Index;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        public System.Windows.Forms.ToolStripStatusLabel DateLabel;
+        public System.Windows.Forms.ToolStripStatusLabel TimeLabel;
+        private System.Windows.Forms.ToolStripStatusLabel CurrentTimeDate;
+        public System.Windows.Forms.ToolStripStatusLabel ObjCounter;
+        public System.Windows.Forms.ToolStripStatusLabel LastAction;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem искатьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сортироватьПоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem поМетражуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem поКоличествуКомнатToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem поЭтажуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьРезультатПоискаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem About;
+        private System.Windows.Forms.ToolStripMenuItem поискаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сортировкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem типМатериалаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem индексToolStripMenuItem;
     }
 }
 

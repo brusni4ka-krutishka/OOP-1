@@ -80,6 +80,7 @@ namespace Lab2
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.искатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.типМатериалаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.индексToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сортироватьПоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поМетражуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поКоличествуКомнатToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,13 +88,20 @@ namespace Lab2
             this.сохранитьРезультатПоискаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поискаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сортировкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.показатьМенюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.About = new System.Windows.Forms.ToolStripMenuItem();
-            this.индексToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuBar = new System.Windows.Forms.GroupBox();
+            this.Undo = new System.Windows.Forms.Button();
+            this.Redo = new System.Windows.Forms.Button();
+            this.DeleteLast = new System.Windows.Forms.Button();
+            this.Clear = new System.Windows.Forms.Button();
+            this.HideMenuBar = new System.Windows.Forms.Button();
             this.Options.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rooms)).BeginInit();
             this.Adress.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.MenuBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -138,6 +146,7 @@ namespace Lab2
             this.Balcony.TabIndex = 4;
             this.Balcony.Text = "Балкон";
             this.Balcony.UseVisualStyleBackColor = true;
+            this.Balcony.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Balcony_KeyDown);
             // 
             // Basement
             // 
@@ -149,6 +158,7 @@ namespace Lab2
             this.Basement.TabIndex = 3;
             this.Basement.Text = "Подвал";
             this.Basement.UseVisualStyleBackColor = true;
+            this.Basement.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Basement_KeyDown);
             // 
             // WC
             // 
@@ -160,6 +170,7 @@ namespace Lab2
             this.WC.TabIndex = 2;
             this.WC.Text = "Туалет";
             this.WC.UseVisualStyleBackColor = true;
+            this.WC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.WC_KeyDown);
             // 
             // Bath
             // 
@@ -171,6 +182,7 @@ namespace Lab2
             this.Bath.TabIndex = 1;
             this.Bath.Text = "Ванна";
             this.Bath.UseVisualStyleBackColor = true;
+            this.Bath.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Bath_KeyDown);
             // 
             // Kitchen
             // 
@@ -182,6 +194,7 @@ namespace Lab2
             this.Kitchen.TabIndex = 0;
             this.Kitchen.Text = "Кухня";
             this.Kitchen.UseVisualStyleBackColor = true;
+            this.Kitchen.Click += new System.EventHandler(this.Kitchen_Click);
             // 
             // DateTimePicker
             // 
@@ -208,6 +221,7 @@ namespace Lab2
             this.Meters.Name = "Meters";
             this.Meters.Size = new System.Drawing.Size(100, 20);
             this.Meters.TabIndex = 6;
+            this.Meters.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Meters_KeyDown);
             this.Meters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Meters_KeyPress);
             // 
             // Rooms
@@ -281,6 +295,7 @@ namespace Lab2
             this.Floor.Name = "Floor";
             this.Floor.Size = new System.Drawing.Size(42, 20);
             this.Floor.TabIndex = 16;
+            this.Floor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Floor_KeyDown);
             this.Floor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Floor_KeyPress);
             // 
             // label10
@@ -307,6 +322,7 @@ namespace Lab2
             this.MaterialType.Name = "MaterialType";
             this.MaterialType.Size = new System.Drawing.Size(109, 21);
             this.MaterialType.TabIndex = 17;
+            this.MaterialType.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MaterialType_MouseClick);
             // 
             // Adress
             // 
@@ -337,6 +353,7 @@ namespace Lab2
             this.Index.Name = "Index";
             this.Index.Size = new System.Drawing.Size(103, 20);
             this.Index.TabIndex = 26;
+            this.Index.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Index_KeyDown);
             this.Index.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Index_KeyPress);
             // 
             // label12
@@ -354,6 +371,7 @@ namespace Lab2
             this.FlatT.Name = "FlatT";
             this.FlatT.Size = new System.Drawing.Size(103, 20);
             this.FlatT.TabIndex = 24;
+            this.FlatT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FlatT_KeyDown);
             // 
             // BuildingT
             // 
@@ -361,6 +379,7 @@ namespace Lab2
             this.BuildingT.Name = "BuildingT";
             this.BuildingT.Size = new System.Drawing.Size(103, 20);
             this.BuildingT.TabIndex = 23;
+            this.BuildingT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BuildingT_KeyDown);
             // 
             // StreetT
             // 
@@ -368,6 +387,7 @@ namespace Lab2
             this.StreetT.Name = "StreetT";
             this.StreetT.Size = new System.Drawing.Size(103, 20);
             this.StreetT.TabIndex = 22;
+            this.StreetT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StreetT_KeyDown);
             this.StreetT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.StreetT_KeyPress);
             // 
             // DistrictT
@@ -376,6 +396,7 @@ namespace Lab2
             this.DistrictT.Name = "DistrictT";
             this.DistrictT.Size = new System.Drawing.Size(103, 20);
             this.DistrictT.TabIndex = 21;
+            this.DistrictT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DistrictT_KeyDown);
             this.DistrictT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DistrictT_KeyPress);
             // 
             // TownT
@@ -384,6 +405,7 @@ namespace Lab2
             this.TownT.Name = "TownT";
             this.TownT.Size = new System.Drawing.Size(103, 20);
             this.TownT.TabIndex = 20;
+            this.TownT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TownT_KeyDown);
             this.TownT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TownT_KeyPress);
             // 
             // CountryT
@@ -392,6 +414,7 @@ namespace Lab2
             this.CountryT.Name = "CountryT";
             this.CountryT.Size = new System.Drawing.Size(103, 20);
             this.CountryT.TabIndex = 19;
+            this.CountryT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CountryT_KeyDown);
             this.CountryT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CountryT_KeyPress);
             // 
             // Flat
@@ -569,6 +592,7 @@ namespace Lab2
             this.искатьToolStripMenuItem,
             this.сортироватьПоToolStripMenuItem,
             this.сохранитьРезультатПоискаToolStripMenuItem,
+            this.показатьМенюToolStripMenuItem,
             this.About});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -588,9 +612,16 @@ namespace Lab2
             // типМатериалаToolStripMenuItem
             // 
             this.типМатериалаToolStripMenuItem.Name = "типМатериалаToolStripMenuItem";
-            this.типМатериалаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.типМатериалаToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.типМатериалаToolStripMenuItem.Text = "Тип материала";
             this.типМатериалаToolStripMenuItem.Click += new System.EventHandler(this.типМатериалаToolStripMenuItem_Click);
+            // 
+            // индексToolStripMenuItem
+            // 
+            this.индексToolStripMenuItem.Name = "индексToolStripMenuItem";
+            this.индексToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.индексToolStripMenuItem.Text = "Индекс";
+            this.индексToolStripMenuItem.Click += new System.EventHandler(this.индексToolStripMenuItem_Click);
             // 
             // сортироватьПоToolStripMenuItem
             // 
@@ -635,16 +666,23 @@ namespace Lab2
             // поискаToolStripMenuItem
             // 
             this.поискаToolStripMenuItem.Name = "поискаToolStripMenuItem";
-            this.поискаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поискаToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.поискаToolStripMenuItem.Text = "поиска";
             this.поискаToolStripMenuItem.Click += new System.EventHandler(this.поискаToolStripMenuItem_Click);
             // 
             // сортировкиToolStripMenuItem
             // 
             this.сортировкиToolStripMenuItem.Name = "сортировкиToolStripMenuItem";
-            this.сортировкиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сортировкиToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.сортировкиToolStripMenuItem.Text = "сортировки";
             this.сортировкиToolStripMenuItem.Click += new System.EventHandler(this.сортировкиToolStripMenuItem_Click);
+            // 
+            // показатьМенюToolStripMenuItem
+            // 
+            this.показатьМенюToolStripMenuItem.Name = "показатьМенюToolStripMenuItem";
+            this.показатьМенюToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
+            this.показатьМенюToolStripMenuItem.Text = "Показать меню";
+            this.показатьМенюToolStripMenuItem.Click += new System.EventHandler(this.показатьМенюToolStripMenuItem_Click);
             // 
             // About
             // 
@@ -653,12 +691,69 @@ namespace Lab2
             this.About.Text = "О программе";
             this.About.Click += new System.EventHandler(this.AboutProgram);
             // 
-            // индексToolStripMenuItem
+            // MenuBar
             // 
-            this.индексToolStripMenuItem.Name = "индексToolStripMenuItem";
-            this.индексToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.индексToolStripMenuItem.Text = "Индекс";
-            this.индексToolStripMenuItem.Click += new System.EventHandler(this.индексToolStripMenuItem_Click);
+            this.MenuBar.Controls.Add(this.Undo);
+            this.MenuBar.Controls.Add(this.Redo);
+            this.MenuBar.Controls.Add(this.DeleteLast);
+            this.MenuBar.Controls.Add(this.Clear);
+            this.MenuBar.Controls.Add(this.HideMenuBar);
+            this.MenuBar.Location = new System.Drawing.Point(0, 0);
+            this.MenuBar.Name = "MenuBar";
+            this.MenuBar.Size = new System.Drawing.Size(620, 61);
+            this.MenuBar.TabIndex = 32;
+            this.MenuBar.TabStop = false;
+            this.MenuBar.Visible = false;
+            // 
+            // Undo
+            // 
+            this.Undo.Location = new System.Drawing.Point(17, 19);
+            this.Undo.Name = "Undo";
+            this.Undo.Size = new System.Drawing.Size(75, 23);
+            this.Undo.TabIndex = 4;
+            this.Undo.Text = "Назад";
+            this.Undo.UseVisualStyleBackColor = true;
+            this.Undo.Click += new System.EventHandler(this.Undo_Click);
+            // 
+            // Redo
+            // 
+            this.Redo.Location = new System.Drawing.Point(98, 19);
+            this.Redo.Name = "Redo";
+            this.Redo.Size = new System.Drawing.Size(75, 23);
+            this.Redo.TabIndex = 3;
+            this.Redo.Text = "Вперед";
+            this.Redo.UseVisualStyleBackColor = true;
+            this.Redo.Click += new System.EventHandler(this.Redo_Click);
+            // 
+            // DeleteLast
+            // 
+            this.DeleteLast.Location = new System.Drawing.Point(179, 19);
+            this.DeleteLast.Name = "DeleteLast";
+            this.DeleteLast.Size = new System.Drawing.Size(75, 23);
+            this.DeleteLast.TabIndex = 2;
+            this.DeleteLast.Text = "Удалить";
+            this.DeleteLast.UseVisualStyleBackColor = true;
+            this.DeleteLast.Click += new System.EventHandler(this.DeleteLast_Click);
+            // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(260, 19);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(75, 23);
+            this.Clear.TabIndex = 1;
+            this.Clear.Text = "Очистить";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            // 
+            // HideMenuBar
+            // 
+            this.HideMenuBar.Location = new System.Drawing.Point(341, 19);
+            this.HideMenuBar.Name = "HideMenuBar";
+            this.HideMenuBar.Size = new System.Drawing.Size(75, 23);
+            this.HideMenuBar.TabIndex = 0;
+            this.HideMenuBar.Text = "Скрыть";
+            this.HideMenuBar.UseVisualStyleBackColor = true;
+            this.HideMenuBar.Click += new System.EventHandler(this.HideMenuBar_Click);
             // 
             // MainForm
             // 
@@ -666,6 +761,7 @@ namespace Lab2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.YellowGreen;
             this.ClientSize = new System.Drawing.Size(620, 679);
+            this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label11);
@@ -704,6 +800,7 @@ namespace Lab2
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.MenuBar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -771,6 +868,13 @@ namespace Lab2
         private System.Windows.Forms.ToolStripMenuItem сортировкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem типМатериалаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem индексToolStripMenuItem;
+        private System.Windows.Forms.GroupBox MenuBar;
+        private System.Windows.Forms.Button HideMenuBar;
+        private System.Windows.Forms.ToolStripMenuItem показатьМенюToolStripMenuItem;
+        private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Button DeleteLast;
+        private System.Windows.Forms.Button Undo;
+        private System.Windows.Forms.Button Redo;
     }
 }
 

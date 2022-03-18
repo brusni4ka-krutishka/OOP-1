@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Linq;
 using System.Threading;
+
 namespace Lab2
 {
     public partial class MainForm : Form
@@ -19,6 +20,9 @@ namespace Lab2
         private string fileContent;
         private string sortResult;
         public static string searchResult;
+
+        private readonly Stack<string[]> undoAction = new Stack<string[]>();
+        private readonly Stack<string[]> redoAction = new Stack<string[]>();
         public MainForm()
         {
             InitializeComponent();
@@ -265,6 +269,43 @@ namespace Lab2
             SearchByIndex newForm = new SearchByIndex();
             newForm.Show();
         }
+
+        private void HideMenuBar_Click(object sender, EventArgs e)
+        {
+            MenuBar.Visible = false;
+        }
+
+        private void показатьМенюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuBar.Visible = true;
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            Balcony.Checked = false;
+            Basement.Checked = false;
+            WC.Checked = false;
+            Bath.Checked = false;
+            Kitchen.Checked = false;
+            Meters.Clear();
+            Floor.Clear();
+            FlatT.Clear();
+            BuildingT.Clear();
+            StreetT.Clear();
+            DistrictT.Clear();
+            TownT.Clear();
+            CountryT.Clear();
+            Index.Clear();
+            OutputBox.Clear();
+        }
+
+        private void DeleteLast_Click(object sender, EventArgs e)
+        {
+            list.RemoveAt(list.Count - 1);
+            File.WriteAllText(mainFilePath, JsonConvert.SerializeObject(list));
+            action = "записать в файл";
+        }
+
     }
 }
 

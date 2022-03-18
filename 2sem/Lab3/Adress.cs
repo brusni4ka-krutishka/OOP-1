@@ -15,41 +15,42 @@ namespace Lab2
         private int index;
         #endregion
         #region Props
+        [Required]
         public string Flatt
         {
             get { return flatt; }
             set { flatt = value; }
         }
 
-
+        [Required]
         public string Building
         {
             get { return building; }
             set { building = value; }
         }
 
-
+        [Required]
         public string Street
         {
             get { return street; }
             set { street = value; }
         }
 
-
+        [Required]
         public string District
         {
             get { return district; }
             set { district = value; }
         }
 
-
+        [Required]
         public string Town
         {
             get { return town; }
             set { town = value; }
         }
 
-
+        [Required]
         public string Country
         {
             get { return country; }

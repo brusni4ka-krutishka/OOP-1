@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab1", "Lab1.csproj", "{99E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2", "..\Lab2\Lab2.csproj", "{8B343500-DA67-4831-8A33-193F773A610F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3", "..\Lab3\Lab3.csproj", "{32A80570-9625-4D85-8AB2-DA8073278927}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3-4-5", "..\Lab3\Lab3-4-5.csproj", "{32A80570-9625-4D85-8AB2-DA8073278927}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

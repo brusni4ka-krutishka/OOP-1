@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Lab6_7"
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
 
-        Title="MainWindow" Height="546.025" Width="815" MinWidth="815">
+        Title="MainWindow" Height="546.025" Width="900" MinWidth="815">
     <Grid Width="Auto" Height="Auto">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -20,23 +20,58 @@
             <TextBlock Margin="132,21,10,24" Background="White"/>
         </Grid>
         <TabControl Grid.Row="1">
-            <TabItem MinWidth="150" Header="Store">
+            <TabItem MinWidth="150" Header="Store" Height="30">
                 <ScrollViewer>
                     <ListBox Name="Photos" Background="Lavender">
-                        <ListBoxItem Margin="3">
+                        <!--<ListBoxItem Margin="3" x:Name="StockList">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="./img/Probka.webp"  Width="218" Height="138" />
+                                <Image Source="./img/Probka.png"  Width="218" Height="138" />
                                 <TextBlock>cats.jpg</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
+                        <ListBoxItem>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="./img/Probka.webp"  Width="218" Height="138"/>
+                            <Image Source="./img/Probka.png"  Width="218" Height="138"/>
                             <TextBlock>windowcat.jpg</TextBlock>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="./img/Probka.webp"  Width="218" Height="138"/>
-                            <TextBlock>234.jpg</TextBlock>
-                        </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>-->
+                            <!--<StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding ImgPath}"  Width="218" Height="138"/>
+                                <StackPanel>
+                                    <TextBlock FontSize="24" Text="Название: "></TextBlock>
+                                    <TextBlock FontSize="24" Text="Фирма: "></TextBlock>
+                                    <TextBlock FontSize="24" Text="Цена: "></TextBlock>
+                                    <TextBlock FontSize="24" Text="На складе: "></TextBlock>
+                                </StackPanel> 
+                                <StackPanel>
+                                    <TextBlock FontSize="24" Text="{Binding Title} "></TextBlock>
+                                    <TextBlock FontSize="24" Text="{Binding Firm}"></TextBlock>
+                                    <TextBlock FontSize="24" Text="{Binding Cost}"></TextBlock>
+                                    <TextBlock FontSize="24" Text="{Binding Stock}"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </ListBoxItem>-->
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding ImgPath}"  Width="218" Height="138"/>
+                                    <StackPanel>
+                                        <TextBlock FontSize="24" Text="Название: "></TextBlock>
+                                        <TextBlock FontSize="24" Text="Фирма: "></TextBlock>
+                                        <TextBlock FontSize="24" Text="Цена: "></TextBlock>
+                                        <TextBlock FontSize="24" Text="На складе: "></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <TextBlock FontSize="24" Text="{Binding Title}"></TextBlock>
+                                        <TextBlock FontSize="24" Text="{Binding Firm}"></TextBlock>
+                                        <TextBlock FontSize="24" Text="{Binding Cost}"></TextBlock>
+                                        <TextBlock FontSize="24" Text="{Binding Stock}"></TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
                     </ListBox>
                 </ScrollViewer>
             </TabItem>

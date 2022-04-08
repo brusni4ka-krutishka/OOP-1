@@ -6,6 +6,7 @@
     <v:String x:Key="m_Tab1">Storage</v:String>
     <v:String x:Key="m_Tab2">Database</v:String>
     <v:String x:Key="m_Tab3">Style</v:String>
+    <v:String x:Key="m_Tab4">Lab8</v:String>
     <v:String x:Key="m_ID">ID</v:String>
     <v:String x:Key="m_TitleGrid">Title</v:String>
     <v:String x:Key="m_Cost">Cost</v:String>

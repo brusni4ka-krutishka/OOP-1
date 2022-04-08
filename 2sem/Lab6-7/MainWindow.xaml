@@ -7,6 +7,52 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
 
        Title="{DynamicResource m_Title}"  Height="546.025" Style="{DynamicResource WindowStyle}" Width="900" MinWidth="815" Initialized="Window_Initialized">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Button.Background" Value="Black" />
+                <Setter Property="Button.Foreground" Value="White" />
+                <Setter Property="Button.FontFamily" Value="Verdana" />
+                <Setter Property="Button.Margin" Value="10" />
+            </Style.Setters>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="IsPressed" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="Foreground" Value="Red" />
+                    </MultiTrigger.Setters>
+                </MultiTrigger>
+                <DataTrigger Binding="{Binding ElementName=checkBox1, Path=IsChecked}"
+                        Value="True">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+            
+        </Style>
+        <Style TargetType="Label">
+            <Style.Setters>
+                <Setter Property="Button.Background" Value="Black" />
+                <Setter Property="Button.Foreground" Value="White" />
+                <Setter Property="Button.FontFamily" Value="Verdana" />
+                <Setter Property="Button.Margin" Value="15" />
+            </Style.Setters>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseLeftButtonUp">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" Duration="0:0:1" To="40" AutoReverse="True" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid Width="Auto" Height="Auto">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -99,6 +145,17 @@
                         <ComboBoxItem Style="{DynamicResource ComboBoxItem}" Background="Pink"  Content="{DynamicResource m_Combo4}" Selected="Eng_Selected"/>
                     </ComboBox>
                     
+                </StackPanel>
+            </TabItem>
+            <TabItem MinWidth="150" Header="{DynamicResource m_Tab4}" Height="30" Style="{DynamicResource TabItemBackground}">
+               
+                <StackPanel Background="Black" >
+                    
+                    <Button x:Name="button1" Content="Кнопка 1"/>
+                    <Button x:Name="button2" Content="Кнопка 2" />
+
+                    <Label Content="Label"/>
+                    <CheckBox x:Name="checkBox1" Content="Disable" />
                 </StackPanel>
             </TabItem>
         </TabControl>

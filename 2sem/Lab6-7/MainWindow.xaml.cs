@@ -1,18 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.IO;
+using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Newtonsoft.Json;
 namespace Lab6_7
 {
@@ -21,6 +11,10 @@ namespace Lab6_7
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly ResourceDictionary dict2 =new ResourceDictionary() { Source = new Uri("light.xaml", UriKind.Relative) };
+        private readonly ResourceDictionary dict1= new ResourceDictionary() { Source = new Uri("dark.xaml", UriKind.Relative) };
+        private readonly ResourceDictionary dict3= new ResourceDictionary() { Source = new Uri("Resources/lang.xaml", UriKind.Relative) };
+        private readonly ResourceDictionary dict4= new ResourceDictionary() { Source = new Uri("Resources/lang.ru_RU.xaml", UriKind.Relative) };
         private List<StockItem> ItemList = new List<StockItem>();
         private readonly string DATApath = "../../database.json";
         public class StockItem
@@ -36,6 +30,9 @@ namespace Lab6_7
         public MainWindow()
         {
             InitializeComponent();
+            Resources.MergedDictionaries.Add(dict2);
+            Resources.MergedDictionaries.Add(dict3);
+
         }
 
         private void Window_Initialized(object sender, EventArgs e)
@@ -117,5 +114,34 @@ namespace Lab6_7
         {
             File.WriteAllText(DATApath, JsonConvert.SerializeObject(ItemList));
         }
+
+        private void Light_Selected(object sender, RoutedEventArgs e)
+        {
+            Resources.MergedDictionaries.Remove(dict1);
+            Resources.MergedDictionaries.Add(dict2);
+        }
+
+        private void Dark_Selected(object sender, RoutedEventArgs e)
+        {
+            Resources.MergedDictionaries.Remove(dict2);
+            Resources.MergedDictionaries.Add(dict1);
+
+        }
+
+        private void Ru_Selected(object sender, RoutedEventArgs e)
+        {
+            Resources.MergedDictionaries.Remove(dict3);
+
+            Resources.MergedDictionaries.Add(dict4);
+
+        } 
+        private void Eng_Selected(object sender, RoutedEventArgs e)
+        {
+            Resources.MergedDictionaries.Remove(dict4);
+
+            Resources.MergedDictionaries.Add(dict3);
+
+        }
+
     }
 }

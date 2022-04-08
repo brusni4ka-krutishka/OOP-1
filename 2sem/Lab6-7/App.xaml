@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:Lab6_7"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="dark.xaml"/>
+                <ResourceDictionary Source="light.xaml"/>
+                <ResourceDictionary Source="Resources/lang.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

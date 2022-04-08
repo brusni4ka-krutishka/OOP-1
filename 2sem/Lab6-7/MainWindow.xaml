@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Lab6_7"
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
 
-        Title="MainWindow" Height="546.025" Width="900" MinWidth="815" Initialized="Window_Initialized">
+       Title="{DynamicResource m_Title}"  Height="546.025" Style="{DynamicResource WindowStyle}" Width="900" MinWidth="815" Initialized="Window_Initialized">
     <Grid Width="Auto" Height="Auto">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -16,12 +16,13 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Column="0" Grid.Row="0" Background="Gray">
-            <Rectangle Width="Auto"  VerticalAlignment="Top" Fill="Gray"/>
-            <TextBox x:Name="Searcher"  FontSize="24" TextAlignment="Left" Margin="132,21,10,24" Background="White" Panel.ZIndex="2" TextChanged="Searcher_TextChanged"/>
+            <Image Source="./img/Logo.png" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" MaxWidth="160" Margin="10,5,0,0"/>
+            <Rectangle Width="Auto"  VerticalAlignment="Top" Style="{DynamicResource RectangleStyle}" />
+            <TextBox x:Name="Searcher"  FontSize="24" TextAlignment="Left" Margin="250,21,10,24" Style="{DynamicResource TextBoxStyle}" Panel.ZIndex="2" TextChanged="Searcher_TextChanged"/>
         </Grid>
         <TabControl Grid.Row="1">
-            <TabItem MinWidth="150" Header="Store" Height="30">
-                <ScrollViewer>
+            <TabItem MinWidth="150" Header="{DynamicResource m_Tab1}" Height="30" Style="{DynamicResource TabItemBackground}">
+                <ScrollViewer Style="{DynamicResource ScrollBack}">
                     <ListBox Name="Photos" Background="Lavender">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
@@ -41,8 +42,8 @@
                     </ListBox>
                 </ScrollViewer>
             </TabItem>
-            <TabItem MinWidth="150" Header="Database">
-                <Grid Height="Auto" ShowGridLines="True">
+            <TabItem MinWidth="150" Header="{DynamicResource m_Tab2}" Style="{DynamicResource TabItemBackground}">
+                <Grid Height="Auto" ShowGridLines="True" Style="{DynamicResource GridBack}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.7*"/>
                         <ColumnDefinition Width="0.3*"/>
@@ -53,40 +54,52 @@
                     </Grid.RowDefinitions>
                     <DataGrid x:Name="Database" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Width="*" Header="ID" Binding="{Binding Id}"/>
-                            <DataGridTextColumn Width="*" Header="Title" Binding="{Binding Title}"/>
-                            <DataGridTextColumn Width="*" Header="Cost" Binding="{Binding Firm}"/>
-                            <DataGridTextColumn Width="*" Header="Stock" Binding="{Binding Cost}"/>
-                            <DataGridTextColumn Width="*" Header="Firm" Binding="{Binding Stock}"/>
-                            <DataGridTextColumn Width="*" Header="ImgPath" Binding="{Binding ImgPath}"/>
+                            <DataGridTextColumn Width="*" Header="{DynamicResource m_ID}" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Width="*" Header="{DynamicResource m_TitleGrid}" Binding="{Binding Title}"/>
+                            <DataGridTextColumn Width="*" Header="{DynamicResource m_Cost}" Binding="{Binding Firm}"/>
+                            <DataGridTextColumn Width="*" Header="{DynamicResource m_Stock}" Binding="{Binding Cost}"/>
+                            <DataGridTextColumn Width="*" Header="{DynamicResource m_Firm}" Binding="{Binding Stock}"/>
+                            <DataGridTextColumn Width="*" Header="{DynamicResource m_ImagePath}" Binding="{Binding ImgPath}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                     <UniformGrid Grid.Column="1" Columns="2" Rows="7">
-                        <Label Content="ID" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Label Content="{DynamicResource m_LabelID}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                         <TextBox x:Name="ID" TextAlignment="Center" VerticalContentAlignment="Center"/>
-                        <Label Content="Title" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Label Content="{DynamicResource m_LabelTitle}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                         <TextBox x:Name="Title" TextAlignment="Center" VerticalContentAlignment="Center"/>
-                        <Label Content="Cost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Label Content="{DynamicResource m_LabelCost}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                         <TextBox x:Name="Cost" TextAlignment="Center" VerticalContentAlignment="Center"/>
-                        <Label Content="Stock" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Label Content="{DynamicResource m_LabelStock}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                         <TextBox x:Name="Stock" TextAlignment="Center" VerticalContentAlignment="Center"/>
-                        <Label Content="Firm" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Label Content="{DynamicResource m_LabelFirm}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                         <TextBox x:Name="Firm" TextAlignment="Center" VerticalContentAlignment="Center"/>
-                        <Label Content="ImgPath" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Label Content="{DynamicResource m_LabelImgPath}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                         <TextBox x:Name="ImgPath" TextAlignment="Center" VerticalContentAlignment="Center"/>
-                        <Button x:Name="Add" Content="Add" Click="Add_Click"/>
-                        <Button x:Name="Clear" Content="Clear" Click="Clear_Click"/>
+                        <Button x:Name="Add" Content="{DynamicResource m_Add}" Click="Add_Click"/>
+                        <Button x:Name="Clear" Content="{DynamicResource m_Clear}" Click="Clear_Click"/>
                     </UniformGrid>
                     <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Label Content="Input ID" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Label Content="{DynamicResource m_InputID}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         <TextBox x:Name="InputID" Width="50" Height="40" VerticalContentAlignment="Center"/>
-                        <Button Width="110" Content="Del by ID" Click="Button_Click"/>
-                        <Button Width="110" Content="Save" Click="Button_Save"/>
+                        <Button Width="110" Content="{DynamicResource m_DelById}" Click="Button_Click"/>
+                        <Button Width="110" Content="{DynamicResource m_Save}" Click="Button_Save"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem MinWidth="150" Header="Style">
-                3
+            <TabItem MinWidth="150" Header="{DynamicResource m_Tab3}" Style="{DynamicResource TabItemBackground}">
+                <StackPanel Style="{DynamicResource StackPanelBack}" Orientation="Horizontal">
+                    <Label Content="{DynamicResource m_ColorLabel}"  HorizontalAlignment="Left" Margin="79,51,0,0"  VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2" Width="122"/>
+                    <ComboBox Style="{DynamicResource ComboBox}"  x:Name="styleBox" HorizontalAlignment="Left" Margin="39.2,51,0,0" VerticalAlignment="Top" Width="161" Background="Black" Height="42" FontSize="24" Grid.Column="1">
+                        <ComboBoxItem Style="{DynamicResource ComboBoxItem}" x:Name="light" Background="Pink" Selected="Light_Selected"  Content="{DynamicResource m_Combo1}"/>
+                        <ComboBoxItem Style="{DynamicResource ComboBoxItem}" Background="Pink"  Content="{DynamicResource m_Combo2}" Selected="Dark_Selected"/>
+                    </ComboBox>
+                    <Label Content="{DynamicResource m_ColorLabelLang}"  HorizontalAlignment="Left" Margin="79,51,0,0"  VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2" Width="197"/>
+                    <ComboBox Style="{DynamicResource ComboBox}"  x:Name="styleBox2" HorizontalAlignment="Left" Margin="39.2,51,0,0" VerticalAlignment="Top" Width="161" Background="Black" Height="42" FontSize="24" Grid.Column="1">
+                        <ComboBoxItem Style="{DynamicResource ComboBoxItem}" x:Name="Ru" Background="Pink" Selected="Ru_Selected"  Content="{DynamicResource m_Combo3}"/>
+                        <ComboBoxItem Style="{DynamicResource ComboBoxItem}" Background="Pink"  Content="{DynamicResource m_Combo4}" Selected="Eng_Selected"/>
+                    </ComboBox>
+                    
+                </StackPanel>
             </TabItem>
         </TabControl>
     </Grid>

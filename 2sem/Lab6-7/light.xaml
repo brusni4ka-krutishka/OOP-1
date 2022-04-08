@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="WindowStyle" TargetType="Window">
+        <Setter Property="Background" Value="Pink" />
+    </Style>
+    <Style x:Key="RectangleStyle" TargetType="Rectangle">
+        <Setter Property="Fill" Value="Pink" />
+    </Style>
+    <Style x:Key="TextBoxStyle" TargetType="TextBox">
+        <Setter Property="Background" Value="Pink" />
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+    <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+    <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="Black"/>
+    </Style>
+    <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="Black"/>
+    </Style>
+    <Style x:Key="ButtonStyleAD" TargetType="Button">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="White"/>
+    </Style>
+    <Style x:Key="ComboBox" TargetType="ComboBox">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="White"/>
+    </Style>
+    <Style x:Key="ComboBoxItem" TargetType="ComboBoxItem">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="Pink"/>
+    </Style>
+    <Style x:Key="TabItemBackground" TargetType="TabItem">
+        <Setter Property="Background" Value="Pink"/>
+    </Style>
+    <Style x:Key="StackPanelBack" TargetType="StackPanel">
+        <Setter Property="Background" Value="White"/>
+    </Style>
+    <Style x:Key="GridBack" TargetType="Grid">
+        <Setter Property="Background" Value="White"/>
+    </Style>
+    <Style x:Key="ScrollBack" TargetType="ScrollViewer">
+        <Setter Property="Background" Value="White"/>
+    </Style>
+</ResourceDictionary>

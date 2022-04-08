@@ -21,10 +21,11 @@ namespace Lab6_7
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<StockItem> ItemList = new List<StockItem>();
-
-        class StockItem
+        private List<StockItem> ItemList = new List<StockItem>();
+        private readonly string DATApath = "../../database.json";
+        public class StockItem
         {
+            public string Id { get; set; }
             public string Title { get; set; }
             public string Firm { get; set; }
             public string Cost { get; set; }
@@ -35,18 +36,86 @@ namespace Lab6_7
         public MainWindow()
         {
             InitializeComponent();
-            List<StockItem> list = new List<StockItem>
+        }
+
+        private void Window_Initialized(object sender, EventArgs e)
+        {
+            ItemList = JsonConvert.DeserializeObject<List<StockItem>>(File.ReadAllText(DATApath));
+            Photos.ItemsSource = ItemList;
+            Database.ItemsSource = ItemList;
+        }
+
+        private void Searcher_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Searcher.Text != "")
             {
-                new StockItem{Title="Огромная пробка Red Boy", Firm="Doc Johnson", Cost="221 руб", Stock="25", ImgPath="./img/1.png"},
-                new StockItem{Title="Черный фаллоимитатор King-Sized Anal Dildo", Firm="Lovetoy", Cost="445 руб", Stock="15", ImgPath="./img/2.png"},
-                new StockItem{Title="Фаллоимитатор Мустанг Черный", Firm="Erasexa", Cost="338 руб", Stock="18", ImgPath="./img/3.png"},
-                new StockItem{Title="Лубрикант для фистинга pjur power 150 мл", Firm="Pjur", Cost="62 руб", Stock="5", ImgPath="./img/4.png"},
-                new StockItem{Title="Бондаж для рук и груди", Firm="Pjur", Cost="62 руб", Stock="5", ImgPath="./img/4.png"},
-                new StockItem{Title="Электростимулятор плуг", Firm="ОOО \"Кисс Экспо\" ", Cost="106 руб", Stock="7", ImgPath="./img/6.png"},
-            };
-            Photos.ItemsSource = list;
+                var SearchResult = ItemList.FindAll(t => t.Title.ToLower().Contains(Searcher.Text.ToLower()));
+                Photos.ItemsSource = SearchResult;
+                Database.ItemsSource = SearchResult;
+            }
+            else
+            {
+                Photos.ItemsSource = ItemList;
+                Database.ItemsSource = ItemList;
+            }
 
         }
 
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            
+            ItemList.Add(new StockItem
+            {
+                Id = ID.Text,
+                Title = Title.Text,
+                Cost=Cost.Text,
+                Stock=Stock.Text,
+                Firm=Firm.Text,
+                ImgPath = ImgPath.Text
+            });
+            Database.ItemsSource = null;
+            Database.ItemsSource = ItemList;
+            Photos.ItemsSource = null;
+            Photos.ItemsSource = ItemList;
+
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+
+            ID.Clear();
+            Title.Clear();
+            Cost.Clear();
+            Stock.Clear();
+            Firm.Clear();
+            ImgPath.Clear();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string id = InputID.Text;
+            var a = ItemList.FindIndex(t => t.Id == id);
+            try
+            {
+                ItemList.RemoveAt(a);
+                Database.ItemsSource = null;
+                Database.ItemsSource = ItemList;
+                Photos.ItemsSource = null;
+                Photos.ItemsSource = ItemList;
+            }
+            catch(Exception)
+            {
+
+            }
+            finally
+            {
+                InputID.Clear();
+            }
+        }
+
+        private void Button_Save(object sender, RoutedEventArgs e)
+        {
+            File.WriteAllText(DATApath, JsonConvert.SerializeObject(ItemList));
+        }
     }
 }

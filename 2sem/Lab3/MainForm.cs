@@ -68,13 +68,14 @@ namespace Lab2
                 
                 flat = new Flat(uint.Parse(Meters.Text),uint.Parse(Rooms.Value.ToString()), mass, DateTimePicker.Value, MaterialType.Text,uint.Parse(Floor.Text));
                 adress = new Adress(flat, CountryT.Text, TownT.Text, DistrictT.Text, StreetT.Text, BuildingT.Text, FlatT.Text,int.Parse(Index.Text));
-                
-                if (!MyValidate.IsValid(flat)) MessageBox.Show("Проверьте значения полей.");
-                else if (!MyValidate.IsValid(adress)) MessageBox.Show("Проверьте значения полей адреса.");
+                Apartments newAppar = new Apartments(flat, adress);
+
+                if (!MyValidate.IsValid(newAppar.Flat)) MessageBox.Show("Проверьте значения полей.");
+                else if (!MyValidate.IsValid(newAppar.Address)) MessageBox.Show("Проверьте значения полей адреса.");
                 else
                 {
-                    list.Add(adress);
-                    OutputBox.Text = adress.ShowInfo();
+                    list.Add(newAppar.Address);
+                    OutputBox.Text = newAppar.Address.ShowInfo();
                 }
             }
             catch (Exception)

@@ -1,0 +1,1 @@
+FOR /R %%p IN (".\.vs",".\Debug",".\Release",".\x64") DO rd "%%p" /s/q

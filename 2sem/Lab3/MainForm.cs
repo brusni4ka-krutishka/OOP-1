@@ -209,7 +209,7 @@ namespace Lab2
             MessageBox.Show("Версия: 1.0.0.\nГончаревич Евгений Витальевич.");
         }
 
-        private void поМетражуToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ПоМетражуToolStripMenuItem_Click(object sender, EventArgs e)
         {
            var list2 = list.OrderByDescending(item => item.Flat.Meters);
             OutputBox.Text += "";
@@ -220,7 +220,7 @@ namespace Lab2
             sortResult += JsonConvert.SerializeObject(list2);
         }
 
-        private void поКоличествуКомнатToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ПоКоличествуКомнатToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var list2 = list.OrderByDescending(item => item.Flat.RoomsCount);
             OutputBox.Text += "";
@@ -231,7 +231,7 @@ namespace Lab2
             sortResult += JsonConvert.SerializeObject(list2);
         }
 
-        private void поЭтажуToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ПоЭтажуToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var list2 = list.OrderByDescending(item => item.Flat.Floor);
             OutputBox.Text += "";
@@ -242,7 +242,7 @@ namespace Lab2
             sortResult += JsonConvert.SerializeObject(list2);
         }
 
-        private void поискаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ПоискаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Thread t1 = new Thread(() => WriteToFile(searchResFilePath, searchResult));
             t1.Start();
@@ -252,19 +252,19 @@ namespace Lab2
             if (File.Exists(path)) fileContent = File.ReadAllText(path);
             File.WriteAllText(path, fileContent + "\n" + result + "\n");
         }
-        private void сортировкиToolStripMenuItem_Click(object sender, EventArgs e)
+        private void СортировкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Thread t1 = new Thread(()=>WriteToFile(sortResFilePath, sortResult));
             t1.Start();
         }
 
-        private void типМатериалаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ТипМатериалаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SearchByMaterial newForm = new SearchByMaterial();
             newForm.Show();
         }
 
-        private void индексToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ИндексToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SearchByIndex newForm = new SearchByIndex();
             newForm.Show();
@@ -275,7 +275,7 @@ namespace Lab2
             MenuBar.Visible = false;
         }
 
-        private void показатьМенюToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ПоказатьМенюToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MenuBar.Visible = true;
         }

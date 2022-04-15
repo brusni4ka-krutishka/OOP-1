@@ -20,9 +20,9 @@ namespace Lab2
         private string fileContent;
         private string sortResult;
         public static string searchResult;
-
+/*
         private readonly Stack<string[]> undoAction = new Stack<string[]>();
-        private readonly Stack<string[]> redoAction = new Stack<string[]>();
+        private readonly Stack<string[]> redoAction = new Stack<string[]>();*/
         public MainForm()
         {
             InitializeComponent();

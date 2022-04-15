@@ -1,4 +1,7 @@
 ﻿
+using System;
+using System.Windows.Forms;
+
 namespace Lab2
 {
     partial class MainForm
@@ -146,7 +149,6 @@ namespace Lab2
             this.Balcony.TabIndex = 4;
             this.Balcony.Text = "Балкон";
             this.Balcony.UseVisualStyleBackColor = true;
-            this.Balcony.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Balcony_KeyDown);
             // 
             // Basement
             // 
@@ -322,7 +324,6 @@ namespace Lab2
             this.MaterialType.Name = "MaterialType";
             this.MaterialType.Size = new System.Drawing.Size(109, 21);
             this.MaterialType.TabIndex = 17;
-            this.MaterialType.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MaterialType_MouseClick);
             // 
             // Adress
             // 
@@ -353,7 +354,6 @@ namespace Lab2
             this.Index.Name = "Index";
             this.Index.Size = new System.Drawing.Size(103, 20);
             this.Index.TabIndex = 26;
-            this.Index.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Index_KeyDown);
             this.Index.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Index_KeyPress);
             // 
             // label12
@@ -371,7 +371,6 @@ namespace Lab2
             this.FlatT.Name = "FlatT";
             this.FlatT.Size = new System.Drawing.Size(103, 20);
             this.FlatT.TabIndex = 24;
-            this.FlatT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FlatT_KeyDown);
             // 
             // BuildingT
             // 
@@ -379,7 +378,6 @@ namespace Lab2
             this.BuildingT.Name = "BuildingT";
             this.BuildingT.Size = new System.Drawing.Size(103, 20);
             this.BuildingT.TabIndex = 23;
-            this.BuildingT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BuildingT_KeyDown);
             // 
             // StreetT
             // 
@@ -387,7 +385,6 @@ namespace Lab2
             this.StreetT.Name = "StreetT";
             this.StreetT.Size = new System.Drawing.Size(103, 20);
             this.StreetT.TabIndex = 22;
-            this.StreetT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StreetT_KeyDown);
             this.StreetT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.StreetT_KeyPress);
             // 
             // DistrictT
@@ -396,7 +393,6 @@ namespace Lab2
             this.DistrictT.Name = "DistrictT";
             this.DistrictT.Size = new System.Drawing.Size(103, 20);
             this.DistrictT.TabIndex = 21;
-            this.DistrictT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DistrictT_KeyDown);
             this.DistrictT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DistrictT_KeyPress);
             // 
             // TownT
@@ -405,7 +401,6 @@ namespace Lab2
             this.TownT.Name = "TownT";
             this.TownT.Size = new System.Drawing.Size(103, 20);
             this.TownT.TabIndex = 20;
-            this.TownT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TownT_KeyDown);
             this.TownT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TownT_KeyPress);
             // 
             // CountryT
@@ -414,7 +409,6 @@ namespace Lab2
             this.CountryT.Name = "CountryT";
             this.CountryT.Size = new System.Drawing.Size(103, 20);
             this.CountryT.TabIndex = 19;
-            this.CountryT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CountryT_KeyDown);
             this.CountryT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CountryT_KeyPress);
             // 
             // Flat
@@ -804,6 +798,51 @@ namespace Lab2
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Redo_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Undo_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Floor_KeyDown(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Meters_KeyDown(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Kitchen_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Balcony_KeyDown(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Bath_KeyDown(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Basement_KeyDown(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void WC_KeyDown(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

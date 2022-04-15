@@ -34,25 +34,25 @@ namespace Lab2
         }
     }
     //-------------------------------------------------Adapter (преобразование интерфейса одного класса в другое)
-    class Adapter
-    {
-        static void Main(string[] args)
-        {
-            // путешественник
-            Driver driver = new Driver();
-            // машина
-            Auto auto = new Auto();
-            // отправляемся в путешествие
-            driver.Travel(auto);
-            // встретились пески, надо использовать верблюда
-            Camel camel = new Camel();
-            // используем адаптер
-            ITransport camelTransport = new CamelToTransportAdapter(camel);
-            // продолжаем путь по пескам пустыни
-            driver.Travel(camelTransport);
+    //class Adapter
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        // путешественник
+    //        Driver driver = new Driver();
+    //        // машина
+    //        Auto auto = new Auto();
+    //        // отправляемся в путешествие
+    //        driver.Travel(auto);
+    //        // встретились пески, надо использовать верблюда
+    //        Camel camel = new Camel();
+    //        // используем адаптер
+    //        ITransport camelTransport = new CamelToTransportAdapter(camel);
+    //        // продолжаем путь по пескам пустыни
+    //        driver.Travel(camelTransport);
 
-        }
-    }
+    //    }
+    //}
     interface ITransport
     {
         void Drive();
@@ -85,10 +85,11 @@ namespace Lab2
             MessageBox.Show("Верблюд идет по пескам пустыни");
         }
     }
+
     // Адаптер от Camel к ITransport
-    class CamelToTransportAdapter : ITransport
+    internal class CamelToTransportAdapter : ITransport
     {
-        Camel camel;
+        private readonly Camel camel;
         public CamelToTransportAdapter(Camel c)
         {
             camel = c;
@@ -101,16 +102,16 @@ namespace Lab2
     }
     //-----------------------------------------------Стратегия
     //представляет шаблон проектирования, который определяет набор алгоритмов, инкапсулирует каждый из них и обеспечивает их взаимозаменяемость
-    class Vehicle
-    {
-        static void Main(string[] args)
-        {
-            Car auto = new Car(4, "Volvo", new PetrolMove());
-            auto.Move();
-            auto.Movable = new ElectricMove();
-            auto.Move();
-        }
-    }
+    //class Vehicle
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        Car auto = new Car(4, "Volvo", new PetrolMove());
+    //        auto.Move();
+    //        auto.Movable = new ElectricMove();
+    //        auto.Move();
+    //    }
+    //}
     interface IMovable
     {
         void Move();

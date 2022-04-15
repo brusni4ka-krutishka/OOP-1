@@ -1,37 +1,38 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:v="clr-namespace:System;assembly=mscorlib">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:v="clr-namespace:System;assembly=mscorlib">
 
-	<v:String x:Key="m_Title">Секс Шоп</v:String>
-	<v:String x:Key="m_Tab1">Магазин</v:String>
-	<v:String x:Key="m_Tab2">База данных</v:String>
-	<v:String x:Key="m_Tab3">Стиль</v:String>
-	<v:String x:Key="m_Tab4">Лаб8</v:String>
+    <v:String x:Key="m_Title">Секс Шоп</v:String>
+    <v:String x:Key="m_Tab1">Магазин</v:String>
+    <v:String x:Key="m_Tab2">База данных</v:String>
+    <v:String x:Key="m_Tab3">Стиль</v:String>
+    <v:String x:Key="m_Tab4">Лаб8</v:String>
 
-	<v:String x:Key="m_ID">ИД</v:String>
-	<v:String x:Key="m_TitleGrid">Название</v:String>
-	<v:String x:Key="m_Cost">Цена</v:String>
-	<v:String x:Key="m_Stock">Кол-во</v:String>
-	<v:String x:Key="m_Firm">Фирма</v:String>
-	<v:String x:Key="m_ImagePath">Путь к картинке</v:String>
+    <v:String x:Key="m_ID">ИД</v:String>
+    <v:String x:Key="m_TitleGrid">Название</v:String>
+    <v:String x:Key="m_Cost">Цена</v:String>
+    <v:String x:Key="m_Stock">Кол-во</v:String>
+    <v:String x:Key="m_Firm">Фирма</v:String>
+    <v:String x:Key="m_ImagePath">Путь к картинке</v:String>
 
-	<v:String x:Key="m_LabelID">ИД</v:String>
-	<v:String x:Key="m_LabelTitle">Название</v:String>
-	<v:String x:Key="m_LabelCost">Цена</v:String>
-	<v:String x:Key="m_LabelStock">Кол-во</v:String>
-	<v:String x:Key="m_LabelFirm">Фирма</v:String>
-	<v:String x:Key="m_LabelImgPath">Путь к картинке</v:String>
+    <v:String x:Key="m_LabelID">ИД</v:String>
+    <v:String x:Key="m_LabelTitle">Название</v:String>
+    <v:String x:Key="m_LabelCost">Цена</v:String>
+    <v:String x:Key="m_LabelStock">Кол-во</v:String>
+    <v:String x:Key="m_LabelFirm">Фирма</v:String>
+    <v:String x:Key="m_LabelImgPath">Путь к картинке</v:String>
 
-	<v:String x:Key="m_InputID">Введите ИД</v:String>
-	<v:String x:Key="m_DelById">Удалить по ИД</v:String>
-	<v:String x:Key="m_Save">Сохранить</v:String>
-	<v:String x:Key="m_Add">Добавить</v:String>
-	<v:String x:Key="m_Clear">Очистить</v:String>
+    <v:String x:Key="m_InputID">Введите ИД</v:String>
+    <v:String x:Key="m_DelById">Удалить по ИД</v:String>
+    <v:String x:Key="m_Save">Сохранить</v:String>
+    <v:String x:Key="m_Add">Добавить</v:String>
+    <v:String x:Key="m_Clear">Очистить</v:String>
 
-	<v:String x:Key="m_ColorLabel">Тема</v:String>
-	<v:String x:Key="m_Combo1">Светлая</v:String>
-	<v:String x:Key="m_Combo2">Темная</v:String>
-	<v:String x:Key="m_ColorLabelLang">Язык/Language</v:String>
-	<v:String x:Key="m_Combo3">Русский</v:String>
-	<v:String x:Key="m_Combo4">English</v:String>
+    <v:String x:Key="m_ColorLabel">Тема</v:String>
+    <v:String x:Key="m_Combo1">Светлая</v:String>
+    <v:String x:Key="m_Combo2">Темная</v:String>
+    <v:String x:Key="m_ColorLabelLang">Язык/Language</v:String>
+    <v:String x:Key="m_Combo3">Русский</v:String>
+    <v:String x:Key="m_Combo4">English</v:String>
 </ResourceDictionary>

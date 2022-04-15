@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Newtonsoft.Json;
 namespace Lab6_7
 {
@@ -16,6 +17,8 @@ namespace Lab6_7
         private readonly ResourceDictionary dict3= new ResourceDictionary() { Source = new Uri("Resources/lang.xaml", UriKind.Relative) };
         private readonly ResourceDictionary dict4= new ResourceDictionary() { Source = new Uri("Resources/lang.ru_RU.xaml", UriKind.Relative) };
         private List<StockItem> ItemList = new List<StockItem>();
+        private readonly Stack<List<StockItem>> UndoAction = new Stack<List<StockItem>>();
+        private readonly Stack<List<StockItem>> RedoAction = new Stack<List<StockItem>>();
         private readonly string DATApath = "../../database.json";
         public class StockItem
         {
@@ -32,7 +35,6 @@ namespace Lab6_7
             InitializeComponent();
             Resources.MergedDictionaries.Add(dict2);
             Resources.MergedDictionaries.Add(dict3);
-
         }
 
         private void Window_Initialized(object sender, EventArgs e)
@@ -60,11 +62,15 @@ namespace Lab6_7
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            
+            List<StockItem> newList = new List<StockItem>(ItemList);
+
+            UndoAction.Push(newList);
+            RedoAction.Clear();
+
             ItemList.Add(new StockItem
             {
                 Id = ID.Text,
-                Title = Title.Text,
+                Title = TitleP.Text,
                 Cost=Cost.Text,
                 Stock=Stock.Text,
                 Firm=Firm.Text,
@@ -81,7 +87,7 @@ namespace Lab6_7
         {
 
             ID.Clear();
-            Title.Clear();
+            TitleP.Clear();
             Cost.Clear();
             Stock.Clear();
             Firm.Clear();
@@ -90,6 +96,10 @@ namespace Lab6_7
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            List<StockItem> newList = new List<StockItem>(ItemList);
+            RedoAction.Clear();
+
+            UndoAction.Push(newList);
             string id = InputID.Text;
             var a = ItemList.FindIndex(t => t.Id == id);
             try
@@ -143,5 +153,47 @@ namespace Lab6_7
 
         }
 
+        private void Undo_Click(object sender, RoutedEventArgs e)
+        {
+            if (UndoAction.Count < 1) return;
+
+            List<StockItem> newList = new List<StockItem>(ItemList);
+            RedoAction.Push(newList);
+
+            ItemList = UndoAction.Pop();
+
+            Database.ItemsSource = ItemList;
+            Photos.ItemsSource = ItemList;
+        }
+
+        private void Redo_Click(object sender, RoutedEventArgs e)
+        {
+            if (RedoAction.Count == 0)
+                return;
+            List<StockItem> newList = new List<StockItem>(ItemList);
+
+            UndoAction.Push(newList);
+            ItemList = RedoAction.Pop();
+
+            Database.ItemsSource = ItemList;
+            Photos.ItemsSource = ItemList;
+        }
+
+        private void LimitedInputUserControl_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Exit_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            using (System.IO.StreamWriter writer = new System.IO.StreamWriter("log.txt", true))
+            {
+                writer.WriteLine("Выход из приложения: " + DateTime.Now.ToShortDateString() + " " +
+                DateTime.Now.ToLongTimeString());
+                writer.Flush();
+            }
+
+            this.Close();
+        }
     }
+   
 }

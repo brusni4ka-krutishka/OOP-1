@@ -9,7 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2", "..\Lab2\Lab2.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3-4-5", "..\Lab3\Lab3-4-5.csproj", "{32A80570-9625-4D85-8AB2-DA8073278927}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab6-7", "..\Lab6-7\Lab6-7.csproj", "{7880B456-1E5D-4AE7-894C-7682B1280E1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab6-7-8-9", "..\Lab6-7\Lab6-7-8-9.csproj", "{7880B456-1E5D-4AE7-894C-7682B1280E1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{70C771B7-1CA1-4C66-AF0A-70D2838177F5}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
